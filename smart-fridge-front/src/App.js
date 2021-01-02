@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-
+import  Welcome from "./components/MyFirstComponent.jsx";
+import React from 'react';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <React.StrictMode>
+          <Welcome name="Witek"></Welcome>
+        </React.StrictMode>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
