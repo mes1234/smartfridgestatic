@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import  Welcome from "./components/MyFirstComponent.jsx";
-import  Login from "./components/Login.jsx";
+import  Welcome from "./components/MyFirstComponent";
+import  Login from "./components/Login";
 import React from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import {

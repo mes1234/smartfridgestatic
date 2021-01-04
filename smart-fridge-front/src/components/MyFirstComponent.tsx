@@ -4,10 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
-import * as qs from 'query-string';
+import * as qs from 'querystring';
 
 
-class Welcome extends React.Component {
+
+
+
+class Welcome extends React.Component<IWelcome> {
   componentDidMount () {
     try{
 
@@ -18,14 +21,13 @@ class Welcome extends React.Component {
     {}
   }
     render() {
-      // console.log(this.props.location.search);
       return (
         <div>
           <Container fluid className="Welcome">
           <Row>
             <Col>{this.props.name}</Col>
             <Col>
-              <Button variant="primary">{this.props.location}</Button>
+              <Button variant="primary">Hit</Button>
             </Col>
           </Row>
         </Container>

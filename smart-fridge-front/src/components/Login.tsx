@@ -20,7 +20,7 @@ class Login extends React.Component {
     ].join("&");
     
     try {
-      window.location.assign(`https://accounts.google.com/o/oauth2/auth?${qParams}`,{mode: 'no-cors'});
+      window.location.assign(`https://accounts.google.com/o/oauth2/auth?${qParams}`);
     } catch (e) {
       console.error(e);
     }
