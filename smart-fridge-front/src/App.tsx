@@ -36,7 +36,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/auth">
-          <Welcome name="Witek"></Welcome>
+          <Welcome name="Authme"></Welcome>
           </Route>
           <Route path="/login">
             <Login />
