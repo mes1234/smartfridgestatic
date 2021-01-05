@@ -14,7 +14,7 @@ class Login extends React.Component {
 
     const qParams = [
       `client_id=717858181087-1mtk11md5mu78li328qq7jocm2ckelth.apps.googleusercontent.com`,
-      `redirect_uri=https://lemon-river-09b311a03.azurestaticapps.net/auth`,
+      `redirect_uri=https://lemon-river-09b311a03.azurestaticapps.net`,
       `scope=https://www.googleapis.com/auth/gmail.metadata`,
       `response_type=token`
     ].join("&");
