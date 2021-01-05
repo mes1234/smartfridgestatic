@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
 import * as qs from 'querystring';
+import Cookies from 'universal-cookie';
 
 
 
@@ -16,6 +17,8 @@ class Welcome extends React.Component<IWelcome> {
 
       const parsed = qs.parse(window.location.href);
       console.log(parsed);
+      const cookies = new Cookies();
+      console.log(cookies.get('myCat')); // Pacman
     }
     catch (e)
     {}

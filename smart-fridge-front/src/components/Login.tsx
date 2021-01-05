@@ -3,13 +3,17 @@ import '../App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Button } from 'react-bootstrap';
+import Cookies from 'universal-cookie';
 
 class Login extends React.Component {
-  // constructor(props)
-  // {
-  //   super(props);
-  //   this.handleGoogleLogin = this.handleGoogleLogin.bind(this);
-  // }
+  constructor(props:any)
+  {
+    super(props);
+    const cookies = new Cookies();
+    cookies.set('myCat', 'Pacman', { path: '/' });
+    console.log(cookies.get('myCat')); // Pacman
+
+  }
   async handleGoogleLogin(){
 
     const qParams = [
