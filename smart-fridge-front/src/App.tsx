@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import  Welcome from "./components/MyFirstComponent";
 import  Login from "./components/Login";
+import  Generator  from "./components/MyStreamComponent";
 import React from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import {
@@ -29,6 +30,9 @@ function App() {
             <li>
               <Link to="/login">Login</Link>
             </li>
+            <li>
+              <Link to="/gen">Generator</Link>
+            </li>
           </ul>
         </nav>
 
@@ -43,6 +47,9 @@ function App() {
           </Route>
           <Route path="/users">
           <Welcome name="Ania"></Welcome>
+          </Route>
+          <Route path="/gen">
+          <Generator name="gen"></Generator>
           </Route>
           <Route path="/">
           <Welcome name="Artur"></Welcome>
