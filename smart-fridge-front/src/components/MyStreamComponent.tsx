@@ -8,6 +8,8 @@ import { Button } from 'react-bootstrap';
 import { RandomizerRequest,RandomizeReply } from "../grpc/streamdata_pb";
 import {StreamerClient} from '../grpc/StreamdataServiceClientPb';
 import { ClientReadableStream } from 'grpc-web';
+import {  } from "grpc-web";
+import Cookies from 'universal-cookie';
 
 
 
@@ -35,14 +37,18 @@ class Generator extends React.Component<IWelcome> {
     })
   }
 
-  getRandomValues()
+  async getRandomValues()
   {
     var echoService = new StreamerClient(API_GRPC,null,null);
     var request = new RandomizerRequest();
     request.setStart(1);
     request.setStop(10);
     request.setCount(10000);
-    var stream = echoService.sayHello(request, {}) as ClientReadableStream<RandomizeReply>;
+    var token :string = await (await fetch(`${API_GRPC}/api/users/token`)).text();
+    const cookies = new Cookies();
+    cookies.set('token', token);
+    var metadata = {'Authorization': `Bearer ${token}`};
+    var stream = echoService.sayHello(request, metadata) as ClientReadableStream<RandomizeReply>;
           stream.on('data', this.handleRandom);
   }
 
